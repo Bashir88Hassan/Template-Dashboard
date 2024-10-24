@@ -1,0 +1,281 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        // font awoseam
+        link(rel="stylesheet", href="../css/all.min.css")
+        // framework
+        link(rel="stylesheet", href="../framework.css")
+        // stayle
+        link(rel="stylesheet", href="../master.css")
+        block title
+            title Dashboard
+    body 
+        .page.d-flex
+            .sidebar.bg-white.p-20.p-relative  
+                h3.p-relative.txt-c.mt-0 Bashir 
+                
+                block links
+                    ul
+                        li 
+                            a(class = "active d-flex align-center fs-14 c-black rad-10 p-10" href="index.html") 
+                                i(class = "fa-regular fa-chart-bar fa-fw")
+                                span.hide-mobile Dashboard
+                            - let se = ["setting", "profile", "Projects", "Courses", "Friends", "Files", "plans"]
+                            - let icon = [ "solid fa-gear", "regular fa-user", "solid fa-diagram-project", "solid fa-graduation-cap", "regular fa-circle-user", "regular fa-file", "regular fa-credit-card"]
+                        - for(let c = 0 ; c < 7 ; c++)
+                            li 
+                                a(class = "d-flex align-center fs-14 c-black rad-10 p-10" href=se[c]+".html") 
+                                    i(class = "fa-" + icon[c]+" fa-fw")
+                                    span.hide-mobile.ml-10 #{se[c]}
+            .content.w-full
+                // start head
+                .head.bg-white.p-15.betweent-flex
+                    .search.p-relative
+                        input( class = "p-10" type="serarch" placeholder = "Type a Keyword")
+                    .icons.d-flex.align-center
+                        span.notification.p-relative 
+                            i.fa-regular.fa-bell.fa-lg
+                        img(src="../imgs/avatar.png", alt="")
+                // end head
+                block content
+                    h1.p-relative Dashborard
+                    div(class = "wrapper d-grid gap-20 grid-margin-mobile")
+                        // start welcome widget
+                        .welcome.bg-white.rad-10.txt-c-mobile.blok-mobile 
+                            .intro.p-20.d-flex.space-between.bg-eee
+                                div 
+                                    h2.m-0 welcome 
+                                    P.c-grey.mt-5 Elzero
+                                img(class = "hide-mobile" src="../imgs/welcome.png", alt="")
+                            img(class = "avatar " src="../imgs/avatar.png", alt="")
+                            .body.txt-c.d-flex.p-20.mt-20.mb-20.block-mobile
+                                div Bashir Hassan
+                                    span(class="d-block c-grey fs-14 mt-10") Deve 
+                                div 80
+                                    span(class="d-block c-grey fs-14 mt-10") Projects 
+                                div $8500
+                                    span(class="d-block c-grey fs-14 mt-10") Earned 
+                            a(href="profile.html" class = "visit d-block fs-14 rad-6 bg-blue c-white w-fit btn-shape") Profile
+                        // end welcome widget
+                        // start quick draft
+                        .quick-draft.p-20.bg-white.rad-10 
+                            h2(class = "mt-0 mb-10 ") quick draft 
+                            p(class = "mt-0 mb-20 c-grey fs-15") write a draft for your ideas
+                            form(action="") 
+                                input(class = "d-block mb-20 w-full p-10 b-none bg-eee rad-6" type = "text" placeholder = "Title")
+                                textarea(class = "d-block mb-20 w-full p-10 b-none bg-eee rad-6" placeholder = "your though") 
+                                input(class = "d-block fs-14 bg-blue c-white b-none w-fit btn-shape " type = "submit" value = "save")
+                        // end quick draft
+                        // start Targets
+                        .targets.p-20.bg-white.rad-10
+                            h2.mt-0.mb-10 Yearly Targets
+                            p.mt-0.mb-20.c-grey.fs-15 Targets of the Year
+                            .target-row.mb-20.center-flex.blue 
+                                .icon.center-flex 
+                                    i.fa-solid.fa-dollar-sign.fa-lg.c-blue
+                                .details 
+                                    span.fs-14.c-grey Money 
+                                    span.d-block.mt-5.mb-10.fw-bold $20.000
+                                    .progress.p-relative 
+                                        span(class = "bg-blue blue rad-6" style="width: 40%")
+                                            span.bg-blue.rad-6 40%
+                            .target-row.mb-20.center-flex.orange 
+                                .icon.center-flex.orange
+                                    i.fa-solid.fa-code.fa-lg.c-orange
+                                .details 
+                                    span.fs-14.c-grey porjects 
+                                    span.d-block.mt-5.mb-10.fw-bold 24
+                                    .progress.p-relative 
+                                        span(class = " bg-orange orange " style="width: 55%")
+                                            span.bg-orange.rad-6 55%
+                            .target-row.mb-20.center-flex.green 
+                                .icon.center-flex.green
+                                    i.fa-solid.fa-dollar-sign.fa-lg.c-green
+                                .details 
+                                    span.fs-14.c-grey Team
+                                    span.d-block.mt-5.mb-10.fw-bold $20.000
+                                    .progress.p-relative 
+                                        span(class = "bg-green green " style="width: 75%")
+                                            span.bg-green.rad-6 75%
+                            
+                        // end targets
+                        // ticket widget
+                        .tickets.p-20.bg-white.rad-10 
+                            h2.mt-0.mb-10 Tickets Statistics 
+                            p.mt-0.mb20.c-grey.fs-15 Everything About support Tickets
+                            .d-flex.txt-c.gap-20.f-wrap
+                                .box.p-20.rad-10.fs-13.c-grey
+                                    i.fa-regular.fa-rectangle-list.fa-2x.mb-10.c-orange
+                                    span.d-block.c-black.fw-bold.fs-25.mb-5 2500
+                                    |Total
+                                .box.p-20.rad-10.fs-13.c-grey
+                                    i.fa-solid.fa-spinner.fa-2x.mb-10.c-blue
+                                    span.d-block.c-black.fw-bold.fs-25.mb-5 500
+                                    |Pending
+                                .box.p-20.rad-10.fs-13.c-grey
+                                    i.fa-regular.fa-circle-check.fa-2x.mb-10.c-green
+                                    span.d-block.c-black.fw-bold.fs-25.mb-5 1900
+                                    |Closed
+                                .box.p-20.rad-10.fs-13.c-grey
+                                    i.fa-regular.fa-rectangle-xmark.fa-2x.mb-10.c-red
+                                    span.d-block.c-black.fw-bold.fs-25.mb-5 2500
+                                    |Total
+                        // end ticket widget
+                        // start Tasks
+                        .tasks.box-shape
+                            h2.m-h Latest Tasks 
+                            - let t = ["Record One New Video", "Write Article", "Finish Project", "Attend The Meeting", "Finish lesson"]
+                            - let d = ["Record Python Create Exe Project", "Write low level vs High level languages", "Pubish Academy Programming Project", "Attend The Project Business Analysis Meeting", "Fininsh Teaching Flex Box"]
+                            - for(let i = 0 ; i< 5; i++)
+                                - if(i == 3 )
+                                    div(class = " task-row betweent-flex done")
+                                        .info
+                                            h3.mt-0.mb-5.fs-15 #{t[i]}
+                                            p.m-0.c-grey #{d[i]}
+                                        i.fa-regular.fa-trash-can.delete 
+                                - else
+                                    div(class = " task-row betweent-flex ")
+                                        .info
+                                            h3.mt-0.mb-5.fs-15 #{t[i]}
+                                            p.m-0.c-grey #{d[i]}
+                                        i.fa-regular.fa-trash-can.delete 
+                        // end Tasks
+                        // Start Top Search Word
+                        .search-items.box-shape 
+                            h2.m-h Top Search Items
+                            .items-head.d-flex.space-between.c-grey.mb-10 
+                                div Keyword 
+                                div Search Count
+                            .items.d-flex.space-between.pt-15.pb-15
+                                span Programming 
+                                span.bg-eee.fs-13.btn-shape 220
+                            - let word =["JavaScript", "PHP", "Code", "Design", "Logic"]
+                            - let number = ["180", "160", "145", "110", "95"]
+                            - for(let i =0; i< 5; i++)
+                                .items.d-flex.space-between.pt-15.pb-15
+                                    span #{word[i]} 
+                                    span.bg-eee.fs-13.btn-shape #{number[i]}
+                        // end Top Search Word Widget
+                        // Start latest Uploads
+                        .latest-uploads.box-shape
+                            h2.m-h Latest Uploads
+                            ul 
+                                li.betweent-flex.pb-10.mb-10 
+                                    div.d-flex.align-center
+                                        img(class = 'mr-10' src="../imgs/pdf.svg", alt="")
+                                        div 
+                                            span.d-block my-file.pdf 
+                                            span.fs-15.c-grey Bashir
+                                    div.bg-eee.btn-shape.fs-13 2.9 M.B
+                                - let fnuame = ["video", "Psd", "Zip", "Dll", "Dps"]
+                                - let path = ["avi", "psd", "zip", "dll", "eps"]
+                                - let upname = ["Admin", "Osama", "User", "Admin", "Designer"] 
+                                - let size = ["4.9", "4.5", "8.9", "4.9", "8.9"]
+                                - for(let i =0 ;i<5; i++)
+                                    li.betweent-flex.pb-10.mb-10
+                                        div.d-flex.align-center
+                                            img(class = 'mr-10' src="../imgs/"+path[i]+".svg", alt="")
+                                            div 
+                                                span.d-block my-#{fnuame[i]}-file.pdf 
+                                                span.fs-15.c-grey #{upname[i]}
+                                        div.bg-eee.btn-shape.fs-13 #{size[i]} M.B
+                        // end latest Uploads
+                        // start last project progress widget
+                        .last-project.box-shape 
+                            h2.m-h last project progress
+                            ul.p-relative
+                                li.mt-25.d-flex.align-center.done Got The Project 
+                                li.mt-25.d-flex.align-center.done Started The Project 
+                                li.mt-25.d-flex.align-center.done The Project About to finish
+                                li.mt-25.d-flex.align-center.current Test the project
+                                li.mt-25.d-flex.align-center     Finish the project & Get Money
+                            img(class = 'launch-icon hide-mobile' src="../imgs/project.png", alt="")
+                        // end last project progress widget
+                        // start reminders widget
+                        .reminders.box-shape
+                            h2.mt-0.mb-25 Rreminders
+                            ul 
+                                li.d-flex.align-center.mt-15  
+                                    span.key.bg-blue.mr-15.d-block.rad-half 
+                                    div.pl-15.blue
+                                        p.fs-14.fw-bold.mt-0.mb-5 Check my task list 
+                                        span.fs-13.c-grey 13/6/2023
+                                - let color = ["green", "orange", "red"]
+                                - for(let i =0 ; i<3; i++)
+                                    li.d-flex.align-center.mt-15  
+                                        span(class = " key mr-15 d-block rad-half bg-"+color[i]) 
+                                        div(class = "pl-15 "+color[i])
+                                            p.fs-14.fw-bold.mt-0.mb-5 Check my task list 
+                                            span.fs-13.c-grey 1#{i}/6/2023
+                        // end reminders widget
+                        // start lates-post
+                        .latest-post.box-shape
+                            h2.mt-0.mb-25 Latest Post 
+                            .top.d-flex.align-center 
+                                img(class = "avatar mr-15" src="../imgs/avatar.png", alt="")
+                                .info 
+                                    span.d-block.mb-5.fw-bold Bashir Hassan 
+                                    span.c-grey About 3 Hours Ago
+                            .post-content.tex-c-mobile.pt-20.pb-20.mt-20.mb-20
+                                | ipsum dolor sit amet consectetur adipisicing elit. Iste, sapiente?
+                            .post-stats.betweent-flex.c-grey 
+                                div 
+                                    i.fa-regular.fa-heart
+                                    span 1.8k
+                                div 
+                                    i.fa-regular.fa-comments
+                                    span 1.8k
+                        // end latest-post
+                        // start social media
+                        .social-media.box-shape
+                            h2.mt-0.mb-25 Social Media Stats 
+                            div(class = "box p-15 p-relative mb-10 betwwent-flex twitter")
+                                i.fa-brands.fa-twitter.fa-2x.c-white.h-full.center-flex
+                                span 90k Followers 
+                                a(class = "fs-13 c-white btn-shape " href="#") Follow
+                            div(class = "box p-15 p-relative mb-10 betwwent-flex facebook")
+                                i.fa-brands.fa-facebook-f.fa-2x.c-white.h-full.center-flex
+                                span 2M Like
+                                a(class = "fs-13 c-white btn-shape " href="#") linke
+                            div(class = "box p-15 p-relative mb-10 betwwent-flex youtube")
+                                i.fa-brands.fa-youtube.fa-2x.c-white.h-full.center-flex
+                                span 1M subs 
+                                a(class = "fs-13 c-white btn-shape " href="#") subscribe
+                            div(class = "box p-15 p-relative mb-10 betwwent-flex linkedin")
+                                i.fa-brands.fa-linkedin.fa-2x.c-white.h-full.center-flex
+                                span 90k Followers 
+                                a(class = "fs-13 c-white btn-shape " href="#") Follow
+                        // end social media
+                    //start Projects 
+                    .projects.box-shape.m-20 
+                        h2.mt-0.mb20 Projects 
+                        .responsive-table 
+                            table.fs-15.w-full 
+                                thead 
+                                    tr 
+                                        td Name
+                                        td Finish Date
+                                        td Client
+                                        td Price
+                                        td Team
+                                        td Status
+                                tbody
+                                    - let stats = ["Pending", "In Progress", "Completed", "Completed", "Rejected", "Completed"]
+                                    -  color = ["orange", "blue", "green", "green", "red", "green"]
+                                    - team = ["4", "3", "3", "3", "3", '4']
+                                    - for(let i =0; i< 6; i++)
+                                        tr 
+                                            td Ministry Wikipedia
+                                            td 10 May 2022
+                                            td Ministry
+                                            td $5300
+                                            td 
+                                                - for(let s =1; s <= team[i]; s++)
+                                                    img(src="../imgs/team-0"+ s +".png", alt="")
+                                            td 
+                                                span(class = "label  c-white btn-shape bg-"+color[i]) #{stats[i]}
+                    // end Projects Table
+        script(src="../index.js") 

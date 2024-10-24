@@ -1,0 +1,28 @@
+mixin box(title, p)
+    h2.mt-0.mb-10= title
+    p.mt-0.mb-20.c-grey.fs-15= p
+
+mixin tog
+    label 
+        input(class = "toggle-checkbox" type="checkbox" checkde)
+        .toggle-switch
+
+mixin links(link)
+    ul
+        li 
+            a(class = " d-flex align-center fs-14 c-black rad-10 p-10" href="index.html") 
+                i(class = "fa-regular fa-chart-bar fa-fw")
+                span.hide-mobile Dashboard
+        - let se = ["setting", "profile", "Projects", "Courses", "Friends", "Files", "plans"]
+        - let icon = [ "solid fa-gear ", "regular fa-user", "solid fa-diagram-project", "solid fa-graduation-cap", "regular fa-circle-user", "regular fa-file", "regular fa-credit-card"]
+        - for(let c = 0 ; c < 8 ; c++)
+            - if (c == link)
+                li
+                    a(class = "active d-flex align-center fs-14 c-black rad-10 p-10" href=se[c]+".html") 
+                        i(class = "fa-" + icon[c]+" fa-fw")
+                        span.hide-mobile #{se[c]}
+            - else 
+                li 
+                    a(class = "d-flex align-center fs-14 c-black rad-10 p-10" href=se[c]+".html") 
+                        i(class = "fa-" + icon[c]+" fa-fw")
+                        span.hide-mobile #{se[c]}

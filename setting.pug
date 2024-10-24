@@ -1,0 +1,118 @@
+extends index 
+include pug/_mixin
+block title
+    title Setting
+block links
+    +links(0)
+block content
+    h1.p-relative Setting 
+    .settings-page.m-20.d-grid.gap-20
+        // star settings box
+        .box-shape 
+            h2.mt-0.mb-10 Site Control
+            p.mt-0.mb-20.c-grey.fs-15 Control The website if ther is maintenance
+            div.mb-15.betweent-flex
+                div 
+                    span Website Control 
+                    p.c-grey.mt-5.mb-0.fs-13 Open/Close website and type the reason
+                div
+                    label 
+                        input(class = "toggle-checkbox" type="checkbox" checkde)
+                        .toggle-switch
+            textarea(class = "close-message p-10 rad-6 d-block w-full" placeholder = "Close Message Content") 
+        // start General info
+        .box-shape
+            +box("General Info", "General Information about your account")
+            .mb-15 
+                label(class = "fs-14 c-grey d-block mb-15" for="first") first name 
+                input(class = "b-none border-ccc p-10 rad-6 d-block w-full " type="text" id = "first" placeholder = "your name")
+            .mb-15 
+                label(class = "fs-14 c-grey d-block mb-10" for="last") Last name 
+                input(class = "b-none border-ccc p-10 rad-6 d-block w-full " type="text" id = "last" placeholder = "your last name")
+            div
+                label(class = "fs-14 c-grey d-block mb-10" for="email") Email 
+                input(class = "email b-none border-ccc p-10 rad-6 d-block w-full " type="email" valu = "o@nn.sa"  id = "email" placeholder = "your email" disabled)
+                a(class = " c-blue" href="#") change
+            
+        // end General info
+        // start securit
+        .box-shape 
+            +box("Security Info","Security Information about your account")
+            .sec-box.mb-15.betweent-flex
+                div 
+                    span Password 
+                    p.c-grey.mt-5.mb-0.fs-13 last change on 6/14/2023
+                a(class= "button bg-blue c-white btn-shape" href="#") Change
+            .sec-box.mb-15.betweent-flex
+                div 
+                    span Two-factor authentication 
+                    p.c-grey.mt-5.mb-0.fs-13 Enable/Disable
+                +tog
+            .sec-box.betweent-flex
+                div 
+                    span Devices
+                    p.c-grey.mt-5.mb-0.fs-13 Check the login device
+                a(class= "button  bg-eee c-black btn-shape" href="#") Device
+        // end securit
+        // statr social
+        .box-shape.social-boxes
+            +box("Social Info", "Social Media Information")
+            .d-flex.align-center.mb-15 
+                i.fa-brands.fa-twitter.center-flex.c-grey
+                input(class = "w-full" type="text" placeholder = "Twitter Username")
+
+            .d-flex.align-center.mb-15 
+                i.fa-brands.fa-facebook-f.center-flex.c-grey
+                input(class = "w-full" type="text" placeholder = "facebook Username")
+
+            .d-flex.align-center.mb-15 
+                i.fa-brands.fa-linkedin.center-flex.c-grey
+                input(class = "w-full" type="text" placeholder = "linkedin Username")
+
+            .d-flex.align-center.mb-15 
+                i.fa-brands.fa-youtube.center-flex.c-grey
+                input(class = "w-full" type="text" placeholder = "youtube Username")
+        // end social
+        // start control
+        .box-shape.widgets-control 
+            +box("control", "Show/Hide Widgets")
+            - let num = ["one", "two", "three", "four", "five", "six"]
+            - let titles = ["Quick Draft", "Yeary Targets", "Tickets Statistics", "latest News", "Latest Tasks", "Top Search Items"]
+            - for(let i =0; i<6; i++)
+                .control.d-flex.align-center.mb-15
+                    input(type="checkbox" id=num[i])
+                    label(for=num[i]) #{titles[i]}
+        // end control
+        // start backup-control
+        .box-shape.backup-control 
+            +box("Backup Manager", "Control Backup Time  and location")
+            .date.d-flex.align-center.mb-15
+                input(type="radio" name = "time", id = "daily" checked )
+                label(for="daily") Daily
+            .date.d-flex.align-center.mb-15
+                input(type="radio" name = "time", id = "weekly")
+                label(for="weekly") Weekly
+            .date.d-flex.align-center.mb-15
+                input(type="radio" name = "time", id = "Monthly")
+                label(for="monthly") Monthly
+            .servers.d-flex.align-center.txt-c
+                input(type="radio" name = "servers" id= "server-one")
+                .server.mb-15.rad-10.w-full
+                    label(class = "d-block m-15" for="server-one") 
+                        i.fa-solid.fa-server.d-block.mb-10
+                        | Megaman
+
+                input(type="radio" name = "servers" id= "server-two" checked)
+                .server.mb-15.rad-10.w-full
+                    label(class = "d-block m-15" for="server-two") 
+                        i.fa-solid.fa-server.d-block.mb-10
+                        | Zero
+
+                input(type="radio" name = "servers" id= "server-three")
+                .server.mb-15.rad-10.w-full
+                    label(class = "d-block m-15" for="server-three") 
+                        i.fa-solid.fa-server.d-block.mb-10
+                        | Sigma
+        // end backup-control
+        // end setting box
+

@@ -1,0 +1,42 @@
+extends index 
+include pug/_mixin
+block title
+    title Files 
+block links
+    +links(5)
+block content
+    h1.p-relative Files
+    .files-page.d-flex.m-20.gap-20
+        // start files stats
+        .files-stats.p-20.bg-white.rad-10
+            h2.mt-0.mb-15.txt-c-mobile Files Statistics
+            - let color = ["blue", "green", "orange", "red"]
+            - for(let i =0; i< 4; i++)
+                // start file
+                .d-flex.align-center.border-eee.p-10.rad-6.mb-15.fs-13 
+                    i(class = "fa-regular fa-file-pdf fa-lg  center-flex c-"+color[i]+" icon "+color[i])
+                    .info   
+                        span Pdf files 
+                        span.d-block.c-grey.mt-5 130
+                        span.size.c-grey 6.5GB
+                // end file
+            a(class = "upload bg-blue c-white fs-13 rad-6 d-block w-fit " href="#") 
+                i.fa-solid.fa-angles-up.mr-10
+                | Upload
+            
+        // end files stats
+        // start files content
+        .files-content.d-grid.gap-20 
+            - for(let i =0 ; i< 12; i++)
+                // start file
+                .file.bg-white.p-10.rad-10 
+                    i.fa-solid.fa-download.c-grey.p-absolute
+                    .icon.txt-c 
+                        img(class = "mt-15 mb-15" src="../imgs/pdf.svg", alt="")
+                    .txt-c.mb-10.fs-14 My-file.pdf 
+                    p.c-grey Bashir
+                    .info.betweent-flex.mt-10.pt-10.fs-13.c-grey
+                        span 15/6/2023
+                        span 5.5MB
+                // end file
+        // end files content

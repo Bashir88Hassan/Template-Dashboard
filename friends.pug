@@ -1,0 +1,38 @@
+extends index 
+include pug/_mixin
+block title
+    title Projects 
+block links
+    +links(4)
+block content
+    h1.p-relative Friends
+    .friends-page.d-grid.m-20.gap-20.grid-margin-mobile
+        - for(let i =1 ; i< 6; i++)
+            - let f = ["Qassem Mohammed", "Ahmed Ali", "Awad Asaam", "Sharaf Aldeen", "Bashir Hassan"]
+            - let g = ["Mobile dev", "Web dev", "Py div", "Desinger", "Security"]
+            //start friends
+            .friend.box-shape.p-relative
+                .contact 
+                    i.fa-solid.fa-phone 
+                    i.fa-regular.fa-envelope
+                .txt-c 
+                    img(class= "rad-half h-100 w-100 mt-10 mb-10 w-100 h-100", src="../imgs/friend-0"+i+".jpg", alt="")
+                    h4.m-0 #{f[i-1]} 
+                    p.c-grey.fs-13.mt-5.mb-0 #{g[i - 1]}
+                .icons.fs-14.p-relative 
+                        .mb-10 
+                            i.fa-regular.fa-face-smile.fa-fw
+                            span 99 Friends
+                        .mb-10 
+                            i.fa-solid.fa-code-commit.fa-fw
+                            span 15 Projects
+                        .mb-10 
+                            i.fa-regular.fa-newspaper.fa-fw
+                            span 25 Articles
+                        span.vip.fw-bold.c-orange vip
+                .info.betweent-flex.fs-13 
+                    span.c-grey Joined 2/10/2021
+                    div 
+                        a(class = "btn-shape bg-blue c-white" href="profile.html") Profile
+                        a(class = "btn-shape bg-red c-white" href="") Remove
+            // end friends

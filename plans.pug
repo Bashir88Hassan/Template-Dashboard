@@ -1,0 +1,32 @@
+extends index 
+include pug/_mixin
+block title
+    title Plans
+block links
+    +links(6)
+block content
+    h1.p-relative Plans
+    .plans-page.d-grid.m-20.gap-20
+        - color = ["green", "blue", "orange"]
+        - for(let i =0; i< 3; i++)
+            // start plan
+            div(class = "plan "+color[i]+" bg-white p-20")
+                div(class = "top bg-"+color[i]+" txt-c p-20") 
+                    h2.m-0.c-white Free 
+                    div(class = "price c-white")
+                        span $
+                        | 0.00
+                ul
+                    - for(let i = 0; i<7; i++)
+                        - if (i > 3)
+                            li 
+                                i.fa-solid.fa-xmark.fa-fw
+                                span Access all text lessons 
+                                i.fa-solid.fa-circle-info.help
+                        - else
+                            li 
+                                i.fa-solid.fa-check.fa-fw.yes
+                                span Access all text lessons 
+                                i.fa-solid.fa-circle-info.help
+                a(href="#" class = "btn-shape bg-"+color[i]+" c-white d-block w-fit") join
+            // end plan

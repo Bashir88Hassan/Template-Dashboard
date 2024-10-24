@@ -1,0 +1,34 @@
+extends index 
+include pug/_mixin
+block title
+    title Projects 
+block links
+    +links(2)
+block content
+    h1.p-relative Projects
+    .profile-page.m-20
+    //start projects page
+    .projects-page.d-grid.m-20.gap-20.grid-margin-mobile
+        - for(let i =0 ; i<12; i++)
+            // start projects
+            .project.box-shape 
+                span.date.fs-13.c-grey 
+                h4.m-0 Bashir Dashboard 
+                p.c-grey.mt-10.mb-10.fs-14 Bashir dashboard project Design, programming and hosting
+                .team 
+                    - for(let i = 0; i< 6; i++)
+                        a(href="#") 
+                            img(src="../imgs/team-0"+i+".png", alt="")
+                .do.d-flex 
+                    span.fs-13.rad-6.bg-eee Programming
+                    span.fs-13.rad-6.bg-eee Design
+                    span.fs-13.rad-6.bg-eee Hosting
+                    span.fs-13.rad-6.bg-eee Markering
+                .info.betweent-flex 
+                    .prog.bg-eee 
+                        span(class = "bg-red" style = "width: 50%")
+                    .fs-14.c-grey 
+                        i.fa-solid.fa-dollar-sign
+                        | 2500
+            // end projects
+    // end projects page

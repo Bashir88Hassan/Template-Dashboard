@@ -1,0 +1,46 @@
+extends index 
+include pug/_mixin
+block title
+    title Projects 
+block links
+    +links(3)
+block content
+    h1.p-relative Courses
+    .courses-page.d-grid.m-20.gap-20.grid-margin-mobile
+        - for(let i =1 ; i< 6; i++)
+            // start course
+            .course.box-shape.p-relative
+                img(class = "cover " src="../imgs/course-0"+i+".jpg", alt="")
+                img(class = "instructor" src="../imgs/team-0"+i+".png", alt="")
+                .p-20 
+                    h4.m-0 Mastering web design
+                    p.description.c-grey.mt-15.fs-14
+                        | Master the art of web designing mocking  prototyping and creating web design architecture 
+                .info.p-15.p-relative.betweent-flex
+                    span.title.bg-blue.c-white.btn-shape Course Info
+                    span.c-grey 
+                        i.fa-regular.fa-user
+                        | 950
+                    span.c-grey 
+                        i.fa-solid.fa-dollar-sign
+                        | 165
+            // end course
+        - for(let i =1 ; i< 6; i++)
+            // start course
+            .course.box-shape.p-relative
+                img(class = "cover " src="../imgs/course-0"+i+".jpg", alt="")
+                img(class = "instructor" src="../imgs/team-0"+i+".png", alt="")
+                .p-20 
+                    h4.m-0 Mastering web design
+                    p.description.c-grey.mt-15.fs-14
+                        | Master the art of web designing mocking  prototyping and creating web design architecture 
+                .info.p-15.p-relative.betweent-flex
+                    span.title.bg-blue.c-white.btn-shape Course Info
+                    span.c-grey 
+                        i.fa-regular.fa-user
+                        | 950
+                    span.c-grey 
+                        i.fa-solid.fa-dollar-sign
+                        | 165
+            // end course
+            
